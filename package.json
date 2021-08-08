@@ -1,0 +1,16 @@
+{
+  "name": "fun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deduplication.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3"
+  }
+}
