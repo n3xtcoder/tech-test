@@ -1,3 +1,6 @@
+
+Schema:
+
 +-------------+
 | cars        |
 +-------------+
@@ -24,7 +27,6 @@
 
 
 
-/*
 Notes:
 
 I've included the "users" table to indicate how we might differentiate between a lender and a borrower, using "user_type".
@@ -58,5 +60,4 @@ JOIN (SELECT car_id
       GROUP BY car_id
       HAVING COUNT(*) = TIMEDIFF ('2021-08-13 20:00:00', '2021-08-09 13:00:00')) availability
   ON availability.car_id = cars.car_id;
-      
-*/
+ 
