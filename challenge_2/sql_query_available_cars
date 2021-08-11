@@ -1,0 +1,7 @@
+SELECT car.id, lender.name, booking.date, booking.time
+FROM car
+INNER JOIN booking
+ON booking.car_id = car.id 
+INNER JOIN lender
+ON lender.id = car.lender_id
+WHERE booking.date = '2021-08-31' AND booking.time = '11:00' AND booking.available;
