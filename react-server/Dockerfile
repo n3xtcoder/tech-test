@@ -2,8 +2,9 @@ FROM nginx:1.21-alpine
 
 ARG API_BASE_URL
 
-# COPY REACT FILES INTO DEFAULT NGINX DIR
-# This is just a mock to demonstrate getting the environment variable to the front-end
+# COPY REACT FILES INTO DEFAULT NGINX DIR HERE
+# This is just a mock file that represents React to demonstrate getting the environment 
+# variable to the front-end
 COPY index.html /usr/share/nginx/html
 
 # COPY NGINX CONFIGURATION

@@ -1,6 +1,9 @@
-I would not recommend deploying the same build with runtime variables injected by Nginx on the front-end, as there is a XSS forgery risk by doing so: 
 
-1. Create Dockerfile for Nginx server
+JUST FYI: I had to take a look at React documentation for a deployment where the API_BASE_URL was not added during the build. I normally would add the URL during the build in a CI/CD pipeline, which is conventionally the way I have been exposed to building most SPA (Single Page Applications) with Webpack. Instead, the requested approach injects the ENV variable over HTTP with the client, which is then loaded into their browser.
+
+These are the steps for the deployment to inject the ENV varaible into the React-Server:
+
+1. Create Dockerfile for React-Nginx server
   a. Configure substitution module
   b. Place variable substitution in React application index.html (Mocked out for our purposes)
   c. Introduce argument in Dockerfile passed to front-end Nginx through substition module.
@@ -8,3 +11,13 @@ I would not recommend deploying the same build with runtime variables injected b
 3. `cd react-server && docker build --tag react-server --build-arg API_BASE_URL=https://myurl.com .`
 4. `docker run -it --rm -d -p 80:80 --name web react-server`
 
+The API_BASE_URL is therefore injected into the server Docker container on the build.
+
+This allows us to deploy a Docker image to a Kubernetes cluster or equivalent service depending on what is availble in the cloud provider (Google, AWS, Azure, OpenShift, etc.).
+
+I would use CI/CD (Continuous Integration/Continuous Deployment) to create a pipeline which would be reused for production and staging deployment, but 'master'/'main' would inject the API_BASE_URL for production while the 'staging' branch would inject the API_BASE_URL for staging.
+
+Q. How would you deploy the frontend so that the same build (minified JS, CSS
+and HTML) can be used in production and staging deployments?
+
+A. I would transpile the front-end application using Webpack to minify and package the JS, CSS, and HTML so that it can be served to the client quickly over HTTP. The index.html file be loaded and the API_BASE_URL injected into the React application through JavaScript.
