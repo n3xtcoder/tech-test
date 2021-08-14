@@ -21,3 +21,9 @@ Q. How would you deploy the frontend so that the same build (minified JS, CSS
 and HTML) can be used in production and staging deployments?
 
 A. I would transpile the front-end application using Webpack to minify and package the JS, CSS, and HTML so that it can be served to the client quickly over HTTP. The index.html file be loaded and the API_BASE_URL injected into the React application through JavaScript.
+
+Q. How would I handle versioning the API?
+
+A. My understanding about your business is that you are building applications for multiple clients. Therefore, we cannot handle n + 1 branches of code every time we version the API to support each client. We would run out of development resources if the team size was kept the same.
+
+I would negotiate versioning the API in the contract with URL versions. Only the new branch would be supported and older branches would have to be deprecated. Downstream clients would have to be aware of this in their contract with our client. Deprecations and deletion of older branches of code would occur over the course of a year with multiple notificiations to the client and updates to their documentation (we would manage their technical API documentation and deliver it to them).
