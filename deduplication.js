@@ -1,8 +1,6 @@
 const dirtyWordList = ['not', 'a', 'pheasant', 'plucker', 'but', 'a', 'pheasant', "plucker's", 'son'];
 console.log(`Dirty: ${dirtyWordList}`);
 
-
-
 /**
  * Checks array for duplicate; starts check from given index
  * so as to ignore the index it is testing against
@@ -22,6 +20,7 @@ const getDuplicateIndex = (array, i) => {
 const deduplicate = (array, i = 0) => {
     // Check to see if there is a duplicate
     // edge case: (use while, in case multiple duplicates)
+
     while (getDuplicateIndex(array, i) > -1) {
         // remove current duplicate
         array.splice(getDuplicateIndex(array, i), 1);
