@@ -1,5 +1,5 @@
 
-JUST FYI: I had to take a look at React documentation for a deployment where the API_BASE_URL was not added during the build. I normally would add the URL during the build in a CI/CD pipeline, which is conventionally the way I have been exposed to building most SPA (Single Page Applications) with Webpack. Instead, the requested approach injects the ENV variable over HTTP with the client, which is then loaded into their browser.
+JUST FYI: I had to take a look at React documentation for a deployment where the API_BASE_URL was not added during the build. I solved a bit of the problem by implementing it to understand how this solution works in detail. I normally would add the URL during the build in a CI/CD pipeline, which is conventionally the way I have been exposed to building most SPA (Single Page Applications) with Webpack. Instead, this approach that was requested, injects the API_BASE_URL variable into the HTTP request for the client, which is then loaded by their browser.
 
 Build time: https://create-react-app.dev/docs/adding-custom-environment-variables/
 Runtime with server injection: https://create-react-app.dev/docs/title-and-meta-tags#generating-dynamic-meta-tags-on-the-server
