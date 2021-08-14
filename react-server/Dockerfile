@@ -15,8 +15,3 @@ RUN apk add --no-cache ruby
 
 WORKDIR /etc/nginx/conf.d
 RUN erb default.rconf > default.conf
-## A description of how your implementtion would work, e.g. a docker file or a deployment config
-
-
-## A list of steps you need to take to change the FQDN of the API (API_BASE_URL) for production or staging
-## How would you handle new versions of the API?
