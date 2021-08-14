@@ -3,6 +3,7 @@ FROM nginx:1.21-alpine
 ARG API_BASE_URL
 
 # COPY REACT FILES INTO NGINX BUILD
+# This is just a mock to demonstrate getting the environment variable to the front-end
 COPY index.html /usr/share/nginx/html
 
 
