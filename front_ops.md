@@ -6,4 +6,4 @@ I would not recommend deploying the same build with runtime variables injected b
   c. Introduce argument in Dockerfile passed to front-end Nginx through substition module.
 2. Create Dockerfile for React minimized build (Webpack)
 3. `cd react-server && docker build --tag react-server .`
-4. ``
+4. `docker run -it --rm -d -p 8080:80 --name web react-server`
