@@ -7,12 +7,12 @@ Runtime with server injection: https://create-react-app.dev/docs/title-and-meta-
 These are the steps for the deployment to inject the ENV varaible into the React-Server:
 
 1. Create Dockerfile for React-Nginx server
-  a. Configure substitution module
+  a. Configure substitution module in Nginx
   b. Place variable substitution in React application index.html (Mocked out for our purposes)
   c. Introduce argument in Dockerfile passed to front-end Nginx through substition module.
-2. Create Dockerfile for React minimized build (Webpack)
-3. `cd react-server && docker build --tag react-server --build-arg API_BASE_URL=https://myurl.com .`
-4. `docker run -it --rm -d -p 80:80 --name web react-server`
+2. `cd react-server && docker build --tag react-server --build-arg API_BASE_URL=https://myurl.com .`
+3. `docker run -it --rm -d -p 80:80 --name web react-server`
+4. Find window.API_BASE_URL to equal the ENV variable passed to application.
 
 The API_BASE_URL is therefore injected into the server Docker container on the build.
 
