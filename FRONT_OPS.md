@@ -12,7 +12,7 @@ These are the steps for the deployment to inject the ENV varaible into the React
   c. Introduce argument in Dockerfile passed to front-end Nginx through substition module.
 2. `cd react-server && docker build --tag react-server --build-arg API_BASE_URL=https://myurl.com .`
 3. `docker run -it --rm -d -p 80:80 --name web react-server`
-4. Find window.API_BASE_URL to equal the ENV variable passed to application.
+4. Find window.API_BASE_URL to equal the ENV variable passed to application (where React would see it)
 
 The API_BASE_URL is therefore injected into the server Docker container on the build.
 
