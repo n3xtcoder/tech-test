@@ -32,4 +32,4 @@ A. My understanding about your business is that you are building applications fo
 ie. https://myurl.com/v1/api
     https://myurl.com/v2/api
 
-I would negotiate versioning the API in the contract with URL versions. Only the new branch would be supported and older branches would have to be deprecated. Downstream clients would have to be aware of this in their contract with our client. Deprecations and deletion of older branches of code would occur over the course of a year with multiple notificiations to the client and updates to their documentation (we would manage their technical API documentation and deliver it to them).
+I would negotiate versioning the API in the contract with URL versions. Only the new branch would be supported and older branches would have to be deprecated. Downstream third-party clients would have to be aware of this in their contract with our client. Deprecations and deletion of older branches of code would occur over the course of a year with multiple notificiations to the client and updates to their documentation (we would manage their technical API documentation and deliver it to them).
