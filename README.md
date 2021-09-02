@@ -80,3 +80,10 @@ We want to see:
 ## Submitting your solution
 
 Please submit your solution as a PR including some nice commits for challenge 1 and the rest in Markdown.
+
+# Answers - Suzanne Wood
+
+# 1. Deduplicate
+
+To run tests:
+npx elm-test
